@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { signIn } from "../../actions";
 import PropTypes from "prop-types";
 
+import Button from "@material-ui/core/Button";
+
 class Signup extends Component {
     static contextTypes = {
         router: PropTypes.object
@@ -31,14 +33,21 @@ class Signup extends Component {
 
     render() {
         return (
-            <div className="centerForm">
-                <button onClick={this.googleLogin} className="goButton-style">
-                    Sign In with Google
-                </button>
-                <button onClick={this.facebookLogin} className="goButton-style">
-                    Sign In with Facebook
-                </button>
-
+            <div>
+                <Button 
+                    variant="contained" 
+                    color="primary"
+                    onClick={this.googleLogin}
+                >
+                    Sign in with Google
+                </Button>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.facebookLogin}
+                >
+                    Sign in with Facebook
+                </Button>
             </div>
         );
     }
