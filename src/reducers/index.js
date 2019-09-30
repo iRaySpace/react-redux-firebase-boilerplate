@@ -1,11 +1,11 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import data from "./dataReducer";
-import auth from "./authReducer";
-import userDetails from "./userReducer";
+import data from './dataReducer';
+import auth from './authReducer';
+import userDetails from './userReducer';
 
 export default combineReducers({
-    data,
-    auth,
-    userDetails
+  data,
+  auth,
+  userDetails,
 });

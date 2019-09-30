@@ -1,32 +1,45 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { signOut } from "../../actions";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+import { signOut } from '../../actions';
 
 class Desk extends Component {
-    static contextTypes = {
-        router: PropTypes.object
-    };
-    
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
+  static contextTypes = {
+    router: PropTypes.object,
+  };
 
-    handleClick() {
-        this.props.signOut();   
-    }
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    render() {
-        return (
-            <div>
-                <button onClick={this.handleClick}>
-                    Log-out
-                </button>
-            </div>
-        );
-    }
+  handleClick() {
+    this.props.signOut();
+  }
+
+  render() {
+    return (
+      <div>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6">
+              Desk
+            </Typography>
+            <Button color="inherit">Logout</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
-export default connect(undefined, { signOut })(Desk);
+export default connect(
+  undefined,
+  { signOut }
+)(Desk);

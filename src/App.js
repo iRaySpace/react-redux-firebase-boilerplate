@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 //Components
-import LoginPassword from "./components/login-password";
-import Signup from "./components/signup";
-import Desk from "./components/desk";
+import LoginPassword from './components/login-password';
+import Signup from './components/signup';
+import Desk from './components/desk';
 
 //Routing + Authorization
-import requireAuth from "./components/auth/requireAuth";
-import { BrowserRouter, Route } from "react-router-dom";
-import { connect } from "react-redux";
-import { fetchUser } from "./actions";
+import requireAuth from './components/auth/requireAuth';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchUser } from './actions';
 
 class App extends Component {
   componentWillMount() {
@@ -29,4 +29,7 @@ class App extends Component {
   }
 }
 
-export default connect(null, { fetchUser })(App);
+export default connect(
+  null,
+  { fetchUser }
+)(App);
