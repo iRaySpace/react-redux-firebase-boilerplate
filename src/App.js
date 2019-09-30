@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from '@material-ui/styles';
 
 //Components
 import LoginPassword from './components/login-password';
@@ -10,6 +11,7 @@ import requireAuth from './components/auth/requireAuth';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchUser } from './actions';
+import theme from './theme';
 
 class App extends Component {
   componentWillMount() {
@@ -18,13 +20,15 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="container">
-          <Route exact path="/" component={LoginPassword} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/desk" component={requireAuth(Desk)} />
-        </div>
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <div className="container">
+            <Route exact path="/" component={LoginPassword} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/desk" component={requireAuth(Desk)} />
+          </div>
+        </BrowserRouter>
+      </ThemeProvider>
     );
   }
 }

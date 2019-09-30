@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import { signOut } from '../../actions';
+import Currency from '../../views/Currency';
 
 class Desk extends Component {
   static contextTypes = {
@@ -16,10 +17,10 @@ class Desk extends Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.onLogout = this.onLogout.bind(this);
   }
 
-  handleClick() {
+  onLogout() {
     this.props.signOut();
   }
 
@@ -28,12 +29,13 @@ class Desk extends Component {
       <div>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6">
-              Desk
-            </Typography>
-            <Button color="inherit">Logout</Button>
+            <Typography variant="h6">Desk</Typography>
+            <Button color="inherit" onClick={this.onLogout}>
+              Logout
+            </Button>
           </Toolbar>
         </AppBar>
+        <Currency />
       </div>
     );
   }
