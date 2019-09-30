@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Payment = () => {
+const Currency = () => {
   const classes = useStyles();
 
   return (
@@ -27,4 +27,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default Currency;

@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <div className="container">
+          <div id="container">
             <Route exact path="/" component={LoginPassword} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/desk" component={requireAuth(Desk)} />

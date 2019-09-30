@@ -1,5 +1,14 @@
 import React from 'react';
-import { CardHeader, Card, Divider, CardActions, Button, CardContent, Grid, Typography } from '@material-ui/core';
+import {
+  CardHeader,
+  Card,
+  Divider,
+  CardActions,
+  Button,
+  CardContent,
+  Grid,
+  Typography,
+} from '@material-ui/core';
 
 const CurrencyDetails = props => {
   return (
@@ -12,35 +21,22 @@ const CurrencyDetails = props => {
       <CardContent>
         <Grid container>
           <Grid item md={6}>
-            <Typography
-              gutterBottom
-              variant="body2"
-            >
+            <Typography gutterBottom variant="body2">
               Perlas
             </Typography>
-            <Typography variant="h3">
-              100
-            </Typography>
+            <Typography variant="h3">100</Typography>
           </Grid>
           <Grid item md={6}>
-            <Typography
-              gutterBottom
-              variant="body2"
-            >
+            <Typography gutterBottom variant="body2">
               Tickets
             </Typography>
-            <Typography variant="h3">
-              100
-            </Typography>
+            <Typography variant="h3">100</Typography>
           </Grid>
         </Grid>
       </CardContent>
       <Divider />
       <CardActions>
-        <Button
-          color="primary"
-          variant="contained"
-        >
+        <Button color="primary" variant="contained">
           Payout
         </Button>
       </CardActions>

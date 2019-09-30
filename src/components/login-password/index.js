@@ -1,10 +1,10 @@
 import './style.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signIn } from '../../actions';
 import PropTypes from 'prop-types';
 
-import Button from '@material-ui/core/Button';
+import Login from '../../views/Login';
+import { signIn } from '../../actions';
 
 class Signup extends Component {
   static contextTypes = {
@@ -33,17 +33,8 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <Button variant="contained" color="primary" onClick={this.googleLogin}>
-          Sign in with Google
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={this.facebookLogin}
-        >
-          Sign in with Facebook
-        </Button>
+      <div className="root">
+        <Login />
       </div>
     );
   }
