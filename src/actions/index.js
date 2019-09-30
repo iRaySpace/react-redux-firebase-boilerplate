@@ -1,5 +1,5 @@
-import { todosRef, authRef, db } from "../config/firebase";
-import { FETCH_TODOS, USER_DETAILS, FETCH_USER } from "./types";
+import { todosRef, authRef, googleProvider, facebookProvider } from "../config/firebase";
+import { FETCH_TODOS, FETCH_USER } from "./types";
 
 export const addToDo = (newToDo, uid) => async dispatch => {
     todosRef
@@ -40,14 +40,18 @@ export const fetchUser = () => dispatch => {
     });
 };
 
+export const signIn = (provider = "") => dispatch => {
+    let authProvider = googleProvider;
 
+    if (provider === "Facebook") {
+        authProvider = facebookProvider;
+    } 
 
-export const signIn = (username, password) => dispatch => {
     authRef
-        .signInWithEmailAndPassword(username, password)
+        .signInWithPopup(authProvider)
         .then(result => { })
         .catch(error => {
-            console.log(error);
+            console.error(error);
         });
 };
 

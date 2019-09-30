@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //Components
 import LoginPassword from "./components/login-password";
 import Signup from "./components/signup";
+import Desk from "./components/desk";
 
 //Routing + Authorization
 import requireAuth from "./components/auth/requireAuth";
@@ -21,6 +22,7 @@ class App extends Component {
         <div className="container">
           <Route exact path="/" component={LoginPassword} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/desk" component={requireAuth(Desk)} />
         </div>
       </BrowserRouter>
     );
