@@ -1,10 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-const Login = () => {
-  const classes = useStyles();
+import { signIn } from '../../actions';
 
+const Login = (props) => {
+  const classes = useStyles();
   return (
     <div className={classes.root}>
       <Grid 
@@ -39,6 +41,7 @@ const Login = () => {
                   size="large"
                   color="primary"
                   variant="contained"
+                  onClick={() => props.signIn('Facebook')}
                 >
                   Login with Facebook
                 </Button>
@@ -51,6 +54,7 @@ const Login = () => {
                   fullWidth
                   size="large"
                   variant="contained"
+                  onClick={() => props.signIn()}
                 >
                   Login with Google
                 </Button>
@@ -88,4 +92,4 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default Login;
+export default connect(undefined, { signIn })(Login);

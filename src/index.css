@@ -3,10 +3,10 @@ html {
 }
 
 body {
+    margin: 0;
     background-color: #f4f6f8;
     height: 100%;
 }
-
 
 #root, #container {
     height: 100%;
